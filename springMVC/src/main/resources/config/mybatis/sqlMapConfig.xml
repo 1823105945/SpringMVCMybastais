@@ -4,8 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-
-
     <!-- 别名定义 -->
     <typeAliases>
         <!-- 批量别名定义
@@ -13,7 +11,5 @@
         -->
         <package name="cn.itcast.ssm.po"/>
     </typeAliases>
-
-
 
 </configuration>

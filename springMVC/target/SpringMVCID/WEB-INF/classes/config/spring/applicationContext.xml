@@ -45,7 +45,7 @@
 
     </bean>
 
-
+<!--spring配置-->
     <!--事务管理
    对mybastis操作数据库事务控制，spring使用jdbc的事务控制类-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
