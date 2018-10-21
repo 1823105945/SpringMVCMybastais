@@ -16,13 +16,13 @@
    <!--可以扫描congtoller、service、。。。
    这里让扫描controller，指定controller的包
    -->
-    <context:component-scan base-package="cn.itcast.ssm.controller"/>
-    <!--注解映射器-->
-    <mvc:annotation-driven/>
-    <!--试图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp"/>
-        <property name="suffix" value=".jsp"/>
+    <!--<context:component-scan base-package="cn.itcast.ssm.controller"/>-->
+    <!--&lt;!&ndash;注解映射器&ndash;&gt;-->
+    <!--<mvc:annotation-driven/>-->
+    <!--&lt;!&ndash;试图解析器&ndash;&gt;-->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="/WEB-INF/jsp"/>-->
+        <!--<property name="suffix" value=".jsp"/>-->
 
-    </bean>
+    <!--</bean>-->
 </beans>
