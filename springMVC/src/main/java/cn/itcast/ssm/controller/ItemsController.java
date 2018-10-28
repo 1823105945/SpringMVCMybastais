@@ -1,5 +1,6 @@
 package cn.itcast.ssm.controller;
 
+import cn.itcast.ssm.po.Items;
 import cn.itcast.ssm.po.ItemsCustom;
 import cn.itcast.ssm.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,24 @@ public class ItemsController {
 
 //    商品查询
     @RequestMapping("/queryItems")
-    public ModelAndView queryItems()throws Exception{
+    public List queryItems()throws Exception{
+
         List<ItemsCustom>itemsCustoms=itemsService.findItemsList(null);
-        ModelAndView modelAndView=new ModelAndView();
-        modelAndView.addObject("itemsList",itemsCustoms);
-        modelAndView.setViewName("items/itemsList");
-        return modelAndView;
+        System.out.print(itemsCustoms);
+//        ModelAndView modelAndView=new ModelAndView();
+//        modelAndView.addObject("itemsList",itemsCustoms);
+//        modelAndView.setViewName("/items/itemsList");
+//        return modelAndView;
+        return itemsCustoms;
+    }
+
+
+
+
+    @RequestMapping("/editItemsSubmit")
+    public void editItemsSubmit()throws Exception {
+
+        Items items= itemsService.selectByPrimaryKey(1);
+        System.out.print("输入你的姓名："+items.getName());
     }
 }
