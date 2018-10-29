@@ -1,19 +1,9 @@
 package cn.itcast.ssm.mapper;
 
-import cn.itcast.ssm.po.Items;
+import cn.itcast.ssm.po.ItemsWithBLOBs;
 
 public interface ItemsMapper {
-    int deleteByPrimaryKey(Integer id);
+    int insert(ItemsWithBLOBs record);
 
-    int insert(Items record);
-
-    int insertSelective(Items record);
-
-    Items selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Items record);
-
-    int updateByPrimaryKeyWithBLOBs(Items record);
-
-    int updateByPrimaryKey(Items record);
+    int insertSelective(ItemsWithBLOBs record);
 }

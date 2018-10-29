@@ -1,6 +1,5 @@
 package cn.itcast.ssm.mapper;
 
-import cn.itcast.ssm.po.Items;
 import cn.itcast.ssm.po.ItemsCustom;
 import cn.itcast.ssm.po.ItemsQueryVo;
 

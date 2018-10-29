@@ -32,10 +32,4 @@ public class ItemsController {
 
 
 
-    @RequestMapping("/editItemsSubmit")
-    public void editItemsSubmit()throws Exception {
-
-        Items items= itemsService.selectByPrimaryKey(1);
-        System.out.print("输入你的姓名："+items.getName());
-    }
 }

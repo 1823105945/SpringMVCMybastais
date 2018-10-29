@@ -1,5 +1,5 @@
 package cn.itcast.ssm.po;
 
-public class ItemsCustom extends Items {
+public class ItemsCustom extends ItemsWithBLOBs {
    
 }

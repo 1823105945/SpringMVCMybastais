@@ -5,13 +5,9 @@ import java.util.Date;
 public class Items {
     private Integer id;
 
-    private Float name;
-
-    private String pic;
-
     private Date createtime;
 
-    private String detail;
+    private Float price;
 
     public Integer getId() {
         return id;
@@ -19,22 +15,6 @@ public class Items {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Float getName() {
-        return name;
-    }
-
-    public void setName(Float name) {
-        this.name = name;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
     }
 
     public Date getCreatetime() {
@@ -45,11 +25,11 @@ public class Items {
         this.createtime = createtime;
     }
 
-    public String getDetail() {
-        return detail;
+    public Float getPrice() {
+        return price;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail == null ? null : detail.trim();
+    public void setPrice(Float price) {
+        this.price = price;
     }
 }
