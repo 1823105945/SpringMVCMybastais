@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "items")
+@RequestMapping(value = "/items")
 public class ItemsController {
 
     @Autowired
@@ -43,10 +43,14 @@ public class ItemsController {
 
 //    商品修改提交
     @RequestMapping(value = "/editItemsSubmit" )
-    public ModelAndView editItemsSubmit(Integer id,ItemsCustom itemsCustom)throws Exception{
+    public String editItemsSubmit(Integer id,ItemsCustom itemsCustom)throws Exception{
         itemsService.updateItems(id,itemsCustom);
-        ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("success");
-        return modelAndView;
+//        ModelAndView modelAndView=new ModelAndView();
+//        modelAndView.setViewName("success");
+//        重定向商品查询列表
+//        return "redirect:/items/queryItems";
+//        页面转发
+//        return "forward:/items/queryItems";
+        return "/success";
     }
 }
