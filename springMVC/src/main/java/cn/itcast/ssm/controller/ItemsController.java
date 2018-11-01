@@ -1,6 +1,7 @@
 package cn.itcast.ssm.controller;
 
 import cn.itcast.ssm.po.ItemsCustom;
+import cn.itcast.ssm.po.ItemsQueryVo;
 import cn.itcast.ssm.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,9 +20,9 @@ public class ItemsController {
 
 //    商品查询
     @RequestMapping("/queryItems")
-    public String queryItems(Model model)throws Exception{
+    public String queryItems(Model model, ItemsQueryVo itemsQueryVo)throws Exception{
 
-        List<ItemsCustom>itemsCustoms=itemsService.findItemsList(null);
+        List<ItemsCustom>itemsCustoms=itemsService.findItemsList(itemsQueryVo);
         System.out.print(itemsCustoms);
 //        ModelAndView modelAndView=new ModelAndView();
 //        modelAndView.addObject("itemsList",itemsCustoms);
