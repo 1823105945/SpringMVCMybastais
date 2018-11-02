@@ -1,6 +1,11 @@
 package cn.itcast.ssm.po;
 
+import javax.validation.constraints.Size;
+
 public class ItemsWithBLOBs extends Items {
+//    效验名称在1-30字符中间
+//    message为错误的校验信息
+    @Size(min = 1,max = 30,message = "{items.name.length.error}")
     private String name;
 
     private String detail;

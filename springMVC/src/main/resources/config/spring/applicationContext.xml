@@ -80,7 +80,7 @@
   -->
     <context:component-scan base-package="cn.itcast.ssm.controller"/>
     <!--注解映射器   -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven validator="validator"/>
 
     <!--试图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -89,4 +89,24 @@
 
     </bean>
 
+    <!--配置校验器-->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <!--校验器-->
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <!--指定效验使用的资源文件，在文件中配置效验错误信息，若果不指定则默认使用classpath下的ValidationMessage.prooerties-->
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+<!--效验错误信息配置文件-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <!--资源文件名-->
+        <property name="basenames">
+            <list>
+                <value>classpath:CustomValidationMessages</value>
+            </list>
+        </property>
+        <!--资源文件编码格式-->
+        <property name="fileEncodings" value="utf-8"/>
+        <!--对资源文件内容缓存时间，单位秒-->
+        <property name="cacheSeconds" value="120"/>
+    </bean>
 </beans>

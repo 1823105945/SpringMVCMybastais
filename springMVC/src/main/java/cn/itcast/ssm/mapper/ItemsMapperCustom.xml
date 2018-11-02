@@ -25,6 +25,10 @@
               #{item}
           </foreach>
       </if>
+      <!--批量修改的sql片段-->
+      <if test="itemsList!=null" >
+
+      </if>
   </sql>
 
 <!--商品查询-->
@@ -45,4 +49,9 @@
             <include refid="items_where"/>
         </where>
     </delete>
+    <!--批量修改商品-->
+    <update id="updateItemsList" parameterType="cn.itcast.ssm.po.ItemsQueryVo">
+        update items set
+        <include refid="items_where"/>
+    </update>
 </mapper>

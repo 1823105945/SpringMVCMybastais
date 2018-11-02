@@ -7,5 +7,6 @@
 <body>
 <h2>Hello World!</h2>
 <td><a href="/items/queryItems">查询</a></td>
+<td><a href="/items/editItemsQuery">批量修改商品</a></td>
 </body>
 </html>

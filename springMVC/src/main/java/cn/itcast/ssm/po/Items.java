@@ -2,10 +2,13 @@ package cn.itcast.ssm.po;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class Items {
     private Integer id;
+//    非空效验
+    @NotNull(message = "{items.createtime.isNull}")
 //时间类型的解决方案
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createtime;
