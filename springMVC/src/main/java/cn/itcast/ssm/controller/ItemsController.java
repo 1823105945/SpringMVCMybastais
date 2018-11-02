@@ -54,4 +54,11 @@ public class ItemsController {
 //        return "forward:/items/queryItems";
         return "/success";
     }
+
+//    批量删除
+    @RequestMapping(value = "/deleteItems")
+    public String deleteItems(ItemsQueryVo itemsQueryVo)throws Exception{
+        itemsService.deleteItemsList(itemsQueryVo);
+        return "/success";
+    }
 }

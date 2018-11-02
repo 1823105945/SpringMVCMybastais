@@ -4,13 +4,27 @@
   <!--定义商品查询sql片段，就是商品查询条件-->
           <!--使用动态sql通过if判断，满足条件进行sql拼接-->
          <!--商品查询条件通过ItemsQueryVo包装对象中itemsCustom属性传递-->
-  <sql id="query_items_where">
-
+  <sql id="items_where">
+     <!--根据名字模糊查询sql片段-->
     <if test="itemsCustom!=null">
         <if test="itemsCustom.name!=null and itemsCustom.name!=''">
             items.name like '%${itemsCustom.name}%'
         </if>
     </if>
+      <!--批量删除的sql片段-->
+    <if test="items_id!=null">
+         <!--例如：id in (1,2,3,4)-->
+           <!--使用foreach便利传入items_id-->
+           <!--collection：指定输入对象中集合属性-->
+           <!--item：每个遍历生成的对象-->
+           <!--open：开始便利时拼接的串是(-->
+           <!--separator:遍历的两个对象中需要拼接的串是,-->
+           <!--close:结束遍历是拼接的串是)-->
+          id in
+          <foreach collection="items_id" index="index" item="item" open="(" separator="," close=")">
+              #{item}
+          </foreach>
+      </if>
   </sql>
 
 <!--商品查询-->
@@ -21,7 +35,14 @@
           resultType="cn.itcast.ssm.po.ItemsCustom">
           select items.* from items
           <where>
-            <include refid="query_items_where"></include>
+            <include refid="items_where"></include>
           </where>
   </select>
+    <!--批量删除-->
+    <delete id="deleteItemsList" parameterType="cn.itcast.ssm.po.ItemsQueryVo">
+        delete from items
+        <where>
+            <include refid="items_where"/>
+        </where>
+    </delete>
 </mapper>

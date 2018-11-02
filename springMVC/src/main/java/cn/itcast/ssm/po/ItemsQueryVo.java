@@ -1,5 +1,7 @@
 package cn.itcast.ssm.po;
 
+import java.util.List;
+
 public class ItemsQueryVo {
 
 //    商品信息
@@ -22,5 +24,15 @@ public class ItemsQueryVo {
 
     public void setItemsCustom(ItemsCustom itemsCustom) {
         this.itemsCustom = itemsCustom;
+    }
+
+    private List<Integer> items_id;
+
+    public List<Integer> getItems_id() {
+        return items_id;
+    }
+
+    public void setItems_id(List<Integer> items_id) {
+        this.items_id = items_id;
     }
 }

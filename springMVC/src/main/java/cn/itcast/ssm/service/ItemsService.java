@@ -15,4 +15,7 @@ public interface ItemsService {
 
 //    跟新商品信息
     public void updateItems(Integer id,ItemsCustom itemsCustom)throws Exception;
+
+//    批量删除商品
+    public void deleteItemsList(ItemsQueryVo itemsQueryVo)throws Exception;
 }

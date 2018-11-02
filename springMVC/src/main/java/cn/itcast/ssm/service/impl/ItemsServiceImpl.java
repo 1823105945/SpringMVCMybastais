@@ -41,4 +41,10 @@ public class ItemsServiceImpl implements ItemsService {
 //        大文本类型可以根据id更新表里面的所有的字段包括大文本
         itemsMapper.updateByPrimaryKeyWithBLOBs(itemsCustom);
     }
+
+//    批量删除
+    @Override
+    public void deleteItemsList(ItemsQueryVo itemsQueryVo) throws Exception {
+        itemsMapperCustom.deleteItemsList(itemsQueryVo);
+    }
 }
