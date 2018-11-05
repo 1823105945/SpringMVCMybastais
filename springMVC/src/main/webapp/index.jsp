@@ -9,6 +9,8 @@
 <td><a href="/items/queryItems">查询</a></td>
 <td><a href="/items/editItemsQuery">批量修改商品</a></td>
 <td><a href="/jsonTest">jsonTest</a></td>
+<td><a href="/items/itemsView?id=1">返回json</a></td>
+
 
 </body>
 </html>

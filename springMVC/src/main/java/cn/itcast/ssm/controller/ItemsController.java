@@ -10,7 +10,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -119,6 +121,15 @@ public class ItemsController {
     public String editItemsAllSubmit(ItemsQueryVo itemsQueryVo)throws Exception{
 
         return "/success";
+    }
+
+//    商品信息输出json
+//    /itemsView/{id}里的{id}表示将这个位置的参数传到@PathVariable指定名称中
+    @RequestMapping(value = "/itemsView")
+    public @ResponseBody ItemsCustom itemsView(Integer id)throws Exception{
+//        调用service查询商品信息
+        ItemsCustom itemsCustom=itemsService.findItemsById(id);
+        return itemsCustom;
     }
 
 //    商品分类
