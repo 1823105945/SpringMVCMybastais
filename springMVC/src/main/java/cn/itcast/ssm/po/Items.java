@@ -8,7 +8,7 @@ import java.util.Date;
 public class Items {
     private Integer id;
 //    非空效验
-    @NotNull(message = "{items.createtime.isNull}")
+//    @NotNull(message = "{items.createtime.isNull}")
 //时间类型的解决方案
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createtime;

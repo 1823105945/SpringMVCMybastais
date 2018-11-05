@@ -34,6 +34,12 @@
     <td><input type="button" value="批量删除" onclick="deleItems()"/></td>
 
 </tr>
+	商品类型：
+	<select name="itemtype">
+		<c:forEach items="${itemtypes}" var="itemtype">
+			<option value="${itemtype.key}">${itemtype.value}</option>
+		</c:forEach>
+	</select>
 </table>
 商品列表：
 <table width="100%" border=1>
