@@ -23,6 +23,10 @@
 </script>
 
 <body>
+当前用户：${username }，
+<c:if test="${username!=null }">
+	<a href="/logout">退出</a>
+</c:if>
 <form name="itemsForm" action="/items/queryItems" method="post">
 查询条件：
 <table width="100%" border=1>
